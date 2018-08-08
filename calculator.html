@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JS Calculator</title>
+        <meta charset="utf-8">
+        <style>
+            body {
+                background-color: #123;
+                margin: 2rem;
+            }
+            .boxy {
+                width: 350px;
+                height: 500px;
+                margin: 24px auto;
+                background-color: #abc;
+                color: #123;
+                font-family: sans-serif;
+                font-weight: bold;
+                border-radius: 15px;
+                border: 5px solid #88a;
+                text-align: center;
+            }
+            #numBox {
+                font-size: .75rem;
+                background-color: lightyellow;
+                border: 3px solid orange;
+                color: darkorange;
+                padding: 5px 10px;
+                border-radius: 5px;
+                margin: 1em auto;
+                width: 250px;
+            }
+            #historyText {
+                text-align: left;
+                margin: 3px auto auto 3x;
+                float: left;
+            }
+            #inputBox{
+                font-size: 1.5rem;
+                color: darkorange;
+                width: 250px;
+                border: 1px solid lightgrey;
+                background-color: lightyellow;
+            }
+            button {
+                min-width: 50px;
+                height: 50px;
+                border-radius: 5px;
+                background-color: orange;
+                color: azure;
+                font-weight: bold;
+                font-size: 2rem;
+                margin: 1rem;
+                box-shadow: 5px 5px 5px #888;
+                cursor: pointer;
+            }
+            #outputBox {
+                margin: .6em;
+                font-size: 2rem;
+                color: #123;
+            }
+            input[type="text"] {
+                text-align: right;
+            }
+            .inputButtons {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+                grid-template-areas:
+                "clr mod power divide"
+                "num1 num2 num3 multiply"
+                "num4 num5 num6 minus"
+                "num7 num8 num9 plus"
+                ". num0 . equals"
+            }
+
+            #clr {grid-area:clr;}
+            #mod {grid-area:mod; font-size: 1rem;}
+            #power {grid-area:power;}
+            #divide {grid-area:divide;}
+
+            #num1 {grid-area:num1;}
+            #num2 {grid-area:num2;}
+            #num3 {grid-area:num3;}
+            #multiply {grid-area:multiply;}
+
+            #num4 {grid-area:num4;}
+            #num5 {grid-area:num5;}
+            #num6 {grid-area:num6;}
+            #minus {grid-area:minus;}
+
+            #num7 {grid-area:num7;}
+            #num8 {grid-area:num8;}
+            #num9 {grid-area:num9;}
+            #plus {grid-area:plus;}
+
+            #num0 {grid-area:num0;}
+            #equals {grid-area:equals;}
+        </style>
+    </head>
+    <body>
+        <div class="boxy">
+            <div id="numBox">
+                <span id="historyText"></span><br>
+                <input type="text" id="inputBox">
+            </div>
+            <div class="inputButtons">
+                
+                    <button id="plus" onclick="inputPressed('+')">+</button>
+                    <button id="minus" onclick="inputPressed('-')">-</button>
+                    <button  id="multiply"onclick="inputPressed('*')">x</button>
+                    <button  id="divide"onclick="inputPressed('/')">&divide;</button>
+                    <button  id="power"onclick="inputPressed('^')">^</button>
+                    <button  id="mod" onclick="inputPressed('%')">Mod</button>
+                    <button id="equals" onclick="calculate()">=</button>
+                    <button onclick="clearAll()">Clr</button>
+                
+                    <button id="num1" onclick="inputPressed('1')">1</button>
+                    <button id="num2" onclick="inputPressed('2')">2</button>
+                    <button id="num3" onclick="inputPressed('3')">3</button>
+                    <button id="num4" onclick="inputPressed('4')">4</button>
+                    <button id="num5" onclick="inputPressed('5')">5</button>
+                    <button id="num6" onclick="inputPressed('6')">6</button>
+                    <button id="num7" onclick="inputPressed('7')">7</button>
+                    <button id="num8" onclick="inputPressed('8')">8</button>
+                    <button id="num9" onclick="inputPressed('9')">9</button>
+                    <button id="num0" onclick="inputPressed('0')">0</button>
+        
+        <script src="calculator.js"></script>
+    </body>
+</html>
